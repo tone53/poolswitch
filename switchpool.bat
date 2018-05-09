@@ -22,18 +22,21 @@ if %apps%==5 goto 5
 
 :1
 echo Switch Pool to Sumo......Now.
+cd "C:\Miner\xmr-free"
 copy pools-sumo.txt pools.txt /y
 Taskkill /F /IM xmr-stak.exe
 timeout /t 3 /nobreak >nul
 exit
 :2
 echo Switch Pool to Haven......Now.
+cd "C:\Miner\xmr-free"
 copy pools-haven.txt pools.txt /y
 Taskkill /F /IM xmr-stak.exe
 timeout /t 3 /nobreak >nul
 exit
 :3
 echo Switch Pool to LOKI......Now.
+cd "C:\Miner\xmr-free"
 copy pools-loki.txt pools.txt /y
 Taskkill /F /IM xmr-stak.exe
 timeout /t 3 /nobreak >nul
