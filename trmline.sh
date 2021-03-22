@@ -15,7 +15,7 @@ for ((i=0; i<${GPU_COUNT}; i++)); do
   IGPU_FAN[${i}]=`echo ${GPU_FAN} | jq -r '.["'${i}'"] // "n/a"'`
 done
 NL=$'\n'
-msg="${rigName}+/+${GPU_COUNT} GPU/${UPTIME}$NL+Hash: ${THASH} Mhs$NL+>+${IGPU_HASH[0]},${IGPU_HASH[1]},${IGPU_HASH[2]},${IGPU_HASH[3]},${IGPU_HASH[4]},${IGPU_HASH[4]}$NL+Temp: ${IGPU_TEMP[0]},${IGPU_TEMP[1]},${IGPU_TEMP[2]},${IGPU_TEMP[3]},${IGPU_TEMP[4]},${IGPU_TEMP[5]}"
+msg="${rigName}+/+${GPU_COUNT} GPU/${UPTIME}$NL+Hash: ${THASH} Mhs$NL+>+${IGPU_HASH[0]},${IGPU_HASH[1]},${IGPU_HASH[2]},${IGPU_HASH[3]},${IGPU_HASH[4]},${IGPU_HASH[5]}$NL+Temp: ${IGPU_TEMP[0]},${IGPU_TEMP[1]},${IGPU_TEMP[2]},${IGPU_TEMP[3]},${IGPU_TEMP[4]},${IGPU_TEMP[5]}"
 curl -X POST -H "Authorization: Bearer $linetoken" -H "Content-Type: application/x-www-form-urlencoded" -d "message=$msg" https://notify-api.line.me/api/notify
 sleep 2
 exit 0
